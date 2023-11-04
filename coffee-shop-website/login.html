@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <title>Coffee Shop | Login Form</title>
+    <link rel="stylesheet" href="../assets/css/login.css" />
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.png" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </head>
+  <body>
+    <form class="form" method="post" name="login">
+      <img src="../assets/images/favicon.png" alt="" class="img img-fluid" />
+      <hr />
+      <h1 class="login-title">Login</h1>
+      <input
+        type="text"
+        class="login-input"
+        name="username"
+        placeholder="Username"
+        autofocus="true"
+        id="username"
+      />
+      <input
+        type="password"
+        class="login-input"
+        name="password"
+        placeholder="Password"
+        id="password"
+      />
+      <input
+        type="submit"
+        value="Login"
+        name="submit"
+        id="login-btn"
+        class="login-button"
+      />
+      <p class="link">
+        Don't have an account? <a href="register.html">Register here!</a>
+      </p>
+      <hr />
+    </form>
+
+    <script src="js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+      document
+        .querySelector("form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          let username = document.getElementById("username").value;
+          let password = document.getElementById("password").value;
+
+          if (username === "admin" && password === "123") {
+            window.location.href =
+              "http://127.0.0.1:5500/admin/edit-profile.html";
+          } else if (username === "customer" && password === "123") {
+            window.location.href =
+            "http://127.0.0.1:5500/index.html";
+          }
+          else {
+            alert("Invalid username or password. Please try again.");
+          }
+        });
+    </script>
+  </body>
+</html>

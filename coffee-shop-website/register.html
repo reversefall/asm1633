@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <title>Coffee Shop | Registration Form</title>
+    <link rel="stylesheet" href="../assets/css/login.css" />
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.png" />
+  </head>
+  <body>
+    <form class="form" action="" method="post" onsubmit="return validatePassword();">
+      <img src="../assets/images/favicon.png" alt="" class="img img-fluid" />
+      <hr />
+      <h1 class="login-title">Coffee Shop | Register Form</h1>
+      <input type="text" class="login-input" name="name" placeholder="Name" required />
+      <input type="text" class="login-input" name="username" placeholder="Username" required />
+      <input type="email" class="login-input" name="email" placeholder="Email Address" required />
+      <input type="password" class="login-input" id="password" name="password" placeholder="Password" required />
+      <input type="password" class="login-input" id="rePassword" name="rePassword" placeholder="Re-enter Password" required />
+      <input type="submit" name="submit" value="Register" class="login-button" />
+      <p class="link">
+        Already have an account? <a href="login.html">Login here!</a>
+      </p>
+    </form>
+    <script>
+      function validatePassword() {
+        var password = document.getElementById("password").value;
+        var rePassword = document.getElementById("rePassword").value;
+
+        if (password !== rePassword) {
+          alert("Passwords do not match. Please re-enter.");
+          return false;
+        }
+        return true;
+      }
+    </script>
+  </body>
+</html>
